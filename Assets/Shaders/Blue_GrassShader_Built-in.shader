@@ -2,7 +2,7 @@
 	Properties {
 		_GrassTex ("Grass Texture", 2D) = "white" {}
 		_Cutoff ("Alpha Cutoff", Range(0, 1)) = 0.5
-		//_GrassQuadSize("Grass Size", Range(0, 1)) = 1
+		_GrassQuadSize("Grass Size", Range(0, 1)) = 1
 	}
 	SubShader {
 		Tags {

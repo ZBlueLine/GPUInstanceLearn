@@ -363,8 +363,8 @@ MonoBehaviour:
   GrassMesh: {fileID: 7605792779696668132, guid: f90d4df403f6e5c489600492c08d28e5, type: 3}
   GrassMaterial: {fileID: 2100000, guid: fc0bcff41f8cc104f9dd68e38ebf04d8, type: 2}
   MaxGrassCount: 50000000
-  GrassCountPerVert: 2000
-  GrassSize: 0.393
+  GrassCountPerVert: 100
+  GrassSize: 1.04
   TerrainObj: {fileID: 601158869}
 --- !u!114 &1531429695
 MonoBehaviour:
@@ -488,8 +488,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531429693}
-  m_LocalRotation: {x: -0.13004526, y: 0.8688452, z: -0.36050916, w: -0.31341565}
-  m_LocalPosition: {x: 7.934867, y: -0.6989927, z: 7.147106}
+  m_LocalRotation: {x: -0.1971883, y: -0.6715333, z: 0.19267295, w: -0.6877769}
+  m_LocalPosition: {x: -18.561752, y: -0.38245323, z: -4.8992343}
   m_LocalScale: {x: 1.0141, y: 1.0141, z: 1.0141}
   m_Children: []
   m_Father: {fileID: 0}
