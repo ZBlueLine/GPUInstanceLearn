@@ -34,7 +34,11 @@ public class GrassRenderPassFeature : ScriptableRendererFeature
                 materialPropertyBlock.SetMatrix("_TerrainToWorldMatrix", c.gameObject.transform.localToWorldMatrix);
                 materialPropertyBlock.SetBuffer("GrassBuffer", grassInfoBuffer);
                 materialPropertyBlock.SetFloat("_GrassQuadSize", c.GrassSize);
-
+                if (c.GrassMesh == null)
+                {
+                    Debug.LogError("没有设置草的Mesh!!");
+                    break;
+                }
                 cmd.DrawMeshInstancedProcedural(c.GrassMesh, 0, GrassMaterial, 0, grassInfoBuffer.count, materialPropertyBlock);
             }
             context.ExecuteCommandBuffer(cmd);

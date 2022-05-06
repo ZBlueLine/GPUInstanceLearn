@@ -33,6 +33,7 @@
 			Cull off
 			ZWrite On
 			ZTest LEqual
+			//Blend SrcAlpha OneMinusSrcAlpha
 
 			HLSLPROGRAM
 			#pragma multi_compile_instancing
@@ -106,6 +107,7 @@
 				attenuation = lerp(float4(1, 1, 1, 1), _ShadowColor, 1 - attenuation);
 				diffuse *= attenuation;
 				grassColor.rgb *= diffuse.rgb;
+				grassColor.a *= grassColor.a;
 				return grassColor;
 			}
 			ENDHLSL
