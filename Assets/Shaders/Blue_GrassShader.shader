@@ -2,6 +2,7 @@
 	Properties {
 		_GrassTex ("Grass Texture", 2D) = "white" {}
 		_Cutoff ("Alpha Cutoff", Range(0, 1)) = 0.5
+		_GrassColor("Grass Color", Color) = (1, 1, 1, 1)
 		_GrassQuadSize("Grass Size", Range(0, 1)) = 1
 		_ShadowColor("Shadow Color", Color) = (0, 0, 0, 1)
 	}
@@ -20,6 +21,7 @@
 		CBUFFER_START(UnityPerMaterial)
 		float4 _GrassTex_ST;
 		float _Cutoff;
+		half4 _GrassColor;
 		float _GrassQuadSize;
 		float4x4 _TerrainToWorldMatrix;
 		half4 _ShadowColor;
@@ -93,7 +95,7 @@
 
 			// Fragment Shader
 			half4 UnlitPassFragment(Varyings IN) : SV_Target {
-				half4 grassColor = SAMPLE_TEXTURE2D(_GrassTex, sampler_GrassTex, IN.uv);
+				half4 grassColor = _GrassColor * SAMPLE_TEXTURE2D(_GrassTex, sampler_GrassTex, IN.uv);
 					clip(grassColor.a - _Cutoff);
 
 				float4 shadowCoord = TransformWorldToShadowCoord(IN.positionWS.xyz);
@@ -107,7 +109,6 @@
 				attenuation = lerp(float4(1, 1, 1, 1), _ShadowColor, 1 - attenuation);
 				diffuse *= attenuation;
 				grassColor.rgb *= diffuse.rgb;
-				grassColor.a *= grassColor.a;
 				return grassColor;
 			}
 			ENDHLSL

@@ -8,6 +8,9 @@ public class GrassTerrain : MonoBehaviour
 {
     private static List<GrassTerrain> mGrassTerrainList = new List<GrassTerrain>();
 
+    [Range(0, 2)]
+    public float Height;
+
     public Mesh GrassMesh;
 
     public int GrassCountPerVert = 100;
@@ -50,6 +53,7 @@ public class GrassTerrain : MonoBehaviour
                         break;
                     Vector3 randomPos = GetRandomPos(e1, e2, v1);
                     Vector3 pos = randomPos;
+                    //pos[1] += Height;
                     float rot = Random.Range(0, 180);
                     Quaternion grassDir = Quaternion.FromToRotation(Vector3.up, normalDir);
                     Matrix4x4 localToTerrianMatrix = Matrix4x4.TRS(pos, grassDir * Quaternion.Euler(0, rot, 0), Vector3.one);
