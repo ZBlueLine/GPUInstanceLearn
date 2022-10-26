@@ -40,22 +40,22 @@ public class BlueGrassInstance : MonoBehaviour
         if (TerrainObj == null)
             if (cam == null)
             {
-                Debug.LogError("Î´ÕÒµ½Ïà»ú");
+                Debug.LogError("æœªæ‰¾åˆ°ç›¸æœº");
                 return false;
             }
         if (TerrainObj == null)
         {
-            Debug.LogError("Ã»ÓĞÉèÖÃµØĞÎOBJ");
+            Debug.LogError("æ²¡æœ‰è®¾ç½®åœ°å½¢OBJ");
             return false;
         }
         if (GrassMesh == null)
         {
-            Debug.LogError("Ã»ÓĞÉèÖÃ²İµÄmesh");
+            Debug.LogError("æ²¡æœ‰è®¾ç½®è‰çš„mesh");
             return false;
         }
         if (GrassMaterial == null)
         {
-            Debug.LogError("Ã»ÓĞÉèÖÃ²İµÄ²ÄÖÊ");
+            Debug.LogError("æ²¡æœ‰è®¾ç½®è‰çš„æè´¨");
             return false;
         }
         if (TerrainMesh == null)
